@@ -72,14 +72,11 @@ struct StoreStruct {
     char otherMac[18];
 };
 
-// const char* ssid = "MARODEKWiFi";
-// const char* password = "MAROWiFi19052004!";
-
 StoreStruct storage = {
   '#',
         false,
   "RDKMobile",
-  "0919932003",
+  "Password",
         3005,
         11025,
         false,
@@ -184,49 +181,49 @@ void setup()
     }
 
     xTaskCreate(ReceiveI2SData, "ReceiveI2SData", 2048, 
-# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 182 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                        __null
-# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 182 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                            , 1, 
-# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 182 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                 __null
-# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 182 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                     );
     xTaskCreate(sendI2SData, "sendI2SData", 2048, 
-# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 183 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                  __null
-# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 183 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                      , 1, 
-# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 183 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                           __null
-# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 183 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                               );
     xTaskCreate(processUDPData, "processUDPData", 2048, 
-# 187 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 184 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                        __null
-# 187 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 184 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                            , 1, 
-# 187 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 184 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                 __null
-# 187 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 184 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                     );
     xTaskCreate(processIncomingCommand, "processIncomingCommand", 2048, 
-# 188 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                        __null
-# 188 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                            , 1, 
-# 188 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                                 __null
-# 188 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 185 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                                     );
     xTaskCreate(processOutgoingCommand, "processOutgoingCommand", 2048, 
-# 189 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                        __null
-# 189 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                            , 2, 
-# 189 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                                                 __null
-# 189 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 186 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                                                     );
 }
 
@@ -590,9 +587,9 @@ void i2sInit_rx()
     pin_config_rx.data_in_num = (-1) /*!< Use in i2s_pin_config_t for pins which should not be changed */;
 
     i2s_driver_install(I2S_NUM_1, &i2s_config_rx, 0, 
-# 551 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 548 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                     __null
-# 551 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 548 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                         );
     i2s_set_pin(I2S_NUM_1, &pin_config_rx);
     i2s_set_clk(I2S_NUM_1, storage.i2sSpeed, I2S_BITS_PER_SAMPLE_16BIT, I2S_CHANNEL_MONO);
@@ -620,9 +617,9 @@ void i2sInit_txm()
     pin_config_txm.data_in_num = 13;
 
     i2s_driver_install(I2S_NUM_0, &i2s_config_txm, 0, 
-# 577 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 574 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                      __null
-# 577 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 574 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                          );
     i2s_set_pin(I2S_NUM_0, &pin_config_txm);
     i2s_set_clk(I2S_NUM_0, storage.i2sSpeed, I2S_BITS_PER_SAMPLE_16BIT, I2S_CHANNEL_MONO);
@@ -652,9 +649,9 @@ void i2sInit_txa(){
     pin_config_txa.data_in_num = 13;
 
     i2s_driver_install(I2S_NUM_0, &i2s_config_txa, 0, 
-# 605 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
+# 602 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino" 3 4
                                                      __null
-# 605 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+# 602 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
                                                          );
     //i2s_set_pin(I2S_NUM_0, NULL);
     i2s_set_pin(I2S_NUM_0, &pin_config_txa);

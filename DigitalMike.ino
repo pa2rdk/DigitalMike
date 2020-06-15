@@ -71,14 +71,11 @@ struct StoreStruct {
     char otherMac[18];
 };
 
-// const char* ssid = "MARODEKWiFi";
-// const char* password = "MAROWiFi19052004!";
-
 StoreStruct storage = {
 		'#',
         false,
 		"RDKMobile",
-		"0919932003",
+		"Password",
         3005,
         11025,
         false,

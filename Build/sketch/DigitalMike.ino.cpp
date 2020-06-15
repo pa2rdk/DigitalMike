@@ -73,14 +73,11 @@ struct StoreStruct {
     char otherMac[18];
 };
 
-// const char* ssid = "MARODEKWiFi";
-// const char* password = "MAROWiFi19052004!";
-
 StoreStruct storage = {
 		'#',
         false,
 		"RDKMobile",
-		"0919932003",
+		"Password",
         3005,
         11025,
         false,
@@ -102,53 +99,53 @@ WiFiUDP udp;
 SSD1306  lcd(OLED_ADR, OLED_SDA, OLED_SCL);// i2c ADDR & SDA, SCL on wemos
 #endif
 
-#line 103 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 100 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void setup();
-#line 192 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 189 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void loop();
-#line 235 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 232 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 boolean check_connection();
-#line 242 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 239 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void InitConnection();
-#line 264 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 261 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void WlanReset();
-#line 278 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 275 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void processOutgoingCommand(void* arg);
-#line 327 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 324 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void ReceiveI2SData(void* arg);
-#line 389 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 386 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void processUDPData(void* arg);
-#line 460 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 457 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void clearBuffers();
-#line 466 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 463 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void sendI2SData(void* arg);
-#line 506 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 503 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void processIncomingCommand(void* arg);
-#line 531 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 528 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void i2sInit_rx();
-#line 556 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 553 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void i2sInit_txm();
-#line 583 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 580 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void i2sInit_txa();
-#line 613 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 610 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void printWifiStatus();
-#line 622 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 619 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void saveConfig();
-#line 628 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 625 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void loadConfig();
-#line 634 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 631 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void printConfig();
-#line 643 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 640 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void setSettings(bool doAsk);
-#line 733 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 730 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void getStringValue(int length);
-#line 753 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 750 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 byte getCharValue();
-#line 774 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 771 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 int getNumericValue();
-#line 803 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 800 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void serialFlush();
-#line 103 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
+#line 100 "/Users/robertdekok/Dropbox/Arduino-workspace/DigitalMike/DigitalMike.ino"
 void setup()
 {
     #ifdef hasLCD
